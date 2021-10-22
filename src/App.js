@@ -15,11 +15,26 @@ function App() {
     setListTask(filteredList);
   };
 
+  const updateTask = (id, task) => {
+    const updateList = listTask.map((e, index) => {
+      if (index === id) {
+        e = task;
+      }
+      return e;
+    });
+    setListTask(updateList);
+  };
+
   return (
     <div className="App">
       <TaskForm newTask={newTask} />
       {listTask.map((e, index) => (
-        <Task task={e} selectTask={selectTask} id={index} />
+        <Task
+          task={e}
+          selectTask={selectTask}
+          id={index}
+          updateTask={updateTask}
+        />
       ))}
     </div>
   );
