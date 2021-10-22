@@ -6,7 +6,6 @@ const TaskForm = (props) => {
 
   const handleForm = (e) => {
     setInputText(e.target.value);
-    console.log(inputText);
   };
 
   const submit = (e) => {
