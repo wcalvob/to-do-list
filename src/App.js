@@ -34,6 +34,7 @@ function App() {
           selectTask={selectTask}
           id={index}
           updateTask={updateTask}
+          key={index}
         />
       ))}
     </div>

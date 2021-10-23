@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import "../App.css";
 
 const Task = (props) => {
   const [editMode, setEditMode] = useState(false);
   const [editText, setEditText] = useState("");
+  const [taskDone, setTaskDone] = useState(false);
 
   const editTask = () => {
     setEditMode(true);
@@ -10,6 +12,10 @@ const Task = (props) => {
 
   const handleEdit = (e) => {
     setEditText(e.target.value);
+  };
+
+  const handleDone = (e) => {
+    setTaskDone(e.target.checked);
   };
 
   const submitEdit = (e) => {
@@ -27,7 +33,8 @@ const Task = (props) => {
     <div>
       {!editMode ? (
         <div className="task">
-          <span>{props.task}</span>
+          <input type="checkbox" onClick={handleDone} />
+          <span className={taskDone ? "completed" : null}>{props.task}</span>
           <button onClick={editTask}>Editar</button>
           <button onClick={deleteTask}>Eliminar</button>
         </div>
