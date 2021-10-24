@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../App.css";
 
-const Task = (props) => {
+const Api = (props) => {
   const [editMode, setEditMode] = useState(false);
   const [editText, setEditText] = useState("");
   const [taskDone, setTaskDone] = useState(false);
@@ -74,4 +74,4 @@ const Task = (props) => {
   );
 };
 
-export default Task;
+export default Api;

@@ -20,12 +20,19 @@ const TaskForm = (props) => {
   };
 
   return (
-    <div>
+    <div className="taskform">
+      <h4>Ingresar tareas manualmente:</h4>
       <form className="form" onSubmit={submit}>
-        <label>Ingresar tarea: </label>
-        <input value={inputText} onChange={handleForm} />
-        <button>Añadir</button>
+        <textarea
+          className="form-control my-2"
+          value={inputText}
+          onChange={handleForm}
+          placeholder="Ingrese la tarea"
+          required
+        ></textarea>
+        <button className="btn btn-warning rounded-pill m-2">Añadir</button>
       </form>
+
       {!validation && <div className="validation">Debe añadir una tarea.</div>}
     </div>
   );
